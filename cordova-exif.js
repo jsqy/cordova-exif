@@ -1,8 +1,9 @@
 var CordovaExif = (function () {
 
-	var Exif, FileHandle, BinaryImage;
+	var Exif, BinaryImage;
 
-	FileHandle = {
+	function F(){
+	var FileHandle = {
 		url: null,
 		callback: null,
 		getExif: false,
@@ -62,6 +63,8 @@ var CordovaExif = (function () {
 			FileHandle.callback(exifObject);
 		}
 	};
+	return FileHandle;
+	}
 
 	Exif = {
 		find: function(image){
@@ -670,8 +673,8 @@ var CordovaExif = (function () {
 
 
 	return {
-		readData: FileHandle.readData,
-		readBase64: FileHandle.readBase64
+		readData: function (imageURI, callback) { F().readData(imageURI, callback); },
+		readBase64: function (imageURI, callback) { F().readBase64(imageURI, callback); }
 	};
 
 })();
