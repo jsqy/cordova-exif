@@ -1,4 +1,4 @@
-var CordovaExif = (function () {
+var Exif = (function () {
 
 	var Exif, BinaryImage;
 
@@ -684,5 +684,3 @@ var CordovaExif = (function () {
 	};
 
 })();
-
-module.exports = CordovaExif;

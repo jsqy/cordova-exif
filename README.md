@@ -1,28 +1,21 @@
-# Cordova Exif
+# Js Exif
 
-This plugin, is the simplest way to get exif data of images at Cordova platform (Phonegap)
+This module, is the simplest way to get exif data of images
 
 ## Getting Started
 
 ### Installing
 
-	cordova plugin add https://github.com/domax/cordova-exif.git --save
+	bower install https://github.com/jsqy/js-exif.git --save
 
 ### Usage
 
 Pass imageURI and get the object with EXIF information
 
 ```javascript
-CordovaExif.readData(imageURI, function(exifObject) {
+Exif.readData(imageURI, function(exifObject) {
   console.log(exifObject);
 });
-```
-
-OBS: To get the Exif data, you application need to have access permission to the file.
-If you are using Cordova version 3.3 or later, install the following plugins:
-```sheel
-cordova plugin add org.apache.cordova.camera
-cordova plugin add org.apache.cordova.file
 ```
 
 ## What is Exif?
@@ -62,30 +55,6 @@ If you want know more about technical information, see these links:
 | Lens Specification | (100,100,0,0) |
 | This is just somes examples, has much more informations. | ... |
 
-
-## Complete Example
-
-This example show how its simple get exif information of photo taken by a smartphone.
-
-```javascript
-var options = {
-	quality: 90,
-	sourceType: 2,
-	destinationType: 1,
-};
-
-function onSuccess(imageURI) {
-	CordovaExif.readData(imageURI, function(exifObject) {
-		console.log(exifObject);
-	});
-};
-
-function onFail(message) {
-	console.log('Failed because: ' + message);
-};
-
-navigator.camera.getPicture(onSuccess, onFail, options);
-```
 
 ## About
 
