@@ -674,6 +674,12 @@ var CordovaExif = (function () {
 
 	return {
 		readData: function (imageURI, callback) { F().readData(imageURI, callback); },
+		readFile: function (file, callback) {
+			var FileHandle = F();
+			FileHandle.callback = callback;
+			FileHandle.getExif = true;
+			FileHandle.readFile(file);
+		},
 		readBase64: function (imageURI, callback) { F().readBase64(imageURI, callback); }
 	};
 
